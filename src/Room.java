@@ -1,4 +1,4 @@
 
-public abstract class Room extends Noun{
+public abstract class Room extends Object{
 
 }
