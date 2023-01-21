@@ -1,9 +1,15 @@
-
+/*
+ * Defines an "Object" in our game. Each object will have a title, attached adjectives, and other objects that can be liked to it.
+ * Each object will have functions for when it is being called by the text handler. 
+ * 
+ * Example object: Table. 
+ * The title would be "Table"
+ * The linkedObjects could include a Bottle object with its own properties
+ * 
+ */
 public abstract class Object {
 	
 	private String title; // Main name that is used for "calling" the noun. Example: "Table" 
-	
-	private String[] adjectives; //May or may not do this. Might be cool.
 	
 	private Object[] linkedObjects; // Used to keep track of other objects linked to this one. Example: A bottle object on a table Object. 
 									// The bottle is liked to the table -- May or may not use this. Depends on how complex we want it.
