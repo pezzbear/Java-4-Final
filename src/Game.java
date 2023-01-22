@@ -5,11 +5,7 @@ import java.io.InputStreamReader;
 public class Game {
 
 	public static void main(String[] args) throws IOException {
-		
-		FlagController flagController = new FlagController();
-		
-		RoomController roomController = new RoomController();
-		
+			
 		TextController textController = new TextController();
 		
 		

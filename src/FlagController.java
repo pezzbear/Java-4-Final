@@ -44,4 +44,10 @@ public class FlagController {
 			}
 		}
 	}
+
+
+	public boolean GetItemFlag() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
