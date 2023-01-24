@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 public class Game {
 
 	public static void main(String[] args) throws IOException {
-			
+		System.out.println("Game started");
+		
 		TextController textController = new TextController();
 		
 		
