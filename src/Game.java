@@ -10,8 +10,12 @@ public class Game {
 	static Logger log = LogManager.getLogger(Game.class.getName());
 	
 	public static void main(String[] args) throws IOException {
-		
+		try {
 		log.debug("hello World");
+		}
+		catch(Exception e) {
+			System.err.println(e);
+		}
 		
 		System.out.println("Game started");
 		
