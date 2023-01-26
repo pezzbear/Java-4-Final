@@ -22,7 +22,6 @@ public class FlagController {
 		boolean itemstatus = items.get(item);
 		return itemstatus;
 	}
-	
 	public void setitem(String item) {
 		if(items.get(item) == false)
 		{
@@ -31,4 +30,5 @@ public class FlagController {
 			items.put(item, false);
 		}
 	}
+	//we are reverting this
 }
