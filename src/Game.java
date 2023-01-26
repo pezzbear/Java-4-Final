@@ -14,7 +14,7 @@ public class Game {
 		log.debug("hello World");
 		}
 		catch(Exception e) {
-			System.err.println(e);
+			log.error(e);
 		}
 		
 		System.out.println("Game started");
