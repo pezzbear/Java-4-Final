@@ -14,15 +14,18 @@ public abstract class Object {
 	
 	//Description of the item for when the player "looks" at the item.
 	public String description; 
-	
+
 	//If the object is an item that can be picked up
 	public boolean canPickup = false;
 	
 	//If the object is an item that can be walked through
 	public boolean canWalkThrough = false;
 	
+	public FlagController flags;
+	
 	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
-	public abstract void initObject(); 
+	public abstract void initObject(FlagController flags); 
+	
 	
 	// All of the methods below are default "Verb" methods. They are called when a verb modifying a certain Object.
 	
@@ -32,14 +35,14 @@ public abstract class Object {
 		return outputString;
 	}
 	
-	public String Pickup() {
+	public String Pickup() { // You'll have to Override this functions in order to add flag checks! 
 		String outputString = "You picked up the " + title;
 		
 		return outputString;
 	}
 	
-	public String Use() {
-		String outputString = "You used the " + title;
+	public String Use() { // You'll have to Override this functions in order to add flag checks! 
+		String outputString = "You used the" + title;
 
 		return outputString;
 	}

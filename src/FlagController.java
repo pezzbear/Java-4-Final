@@ -8,6 +8,7 @@ public class FlagController {
 	public void InitializeFlagController() {
 		flags.put("HasSword", false);
 		flags.put("PushedButton", true);
+		flags.put("hasMakupOn", false);
 	}
 	
 	public boolean GetFlag(String flagID) {

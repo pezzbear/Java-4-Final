@@ -5,11 +5,11 @@
  */
 public class TextController {
 	
-	FlagController flagController = new FlagController();
+	public FlagController flagController = new FlagController();
 	
-	RoomController roomController = new RoomController();
+	public RoomController roomController = new RoomController();
 	
-	PlayerInventory inventory = new PlayerInventory();
+	public PlayerInventory inventory = new PlayerInventory();
 	
 	public void InputText(String inputString) {
 
@@ -140,15 +140,10 @@ public class TextController {
 					break;
 				} 
 			} else {
-				if(noun == roomController.currentRoom.title.toLowerCase()) {
-					outputText = roomController.currentRoom.Examine();
-					return outputText;
-				} else {
-					for (Object object  : roomController.getCurrentObjects()) {
-						if (noun.equals(object.title.toLowerCase())) {
-							outputText = object.description;
-							return outputText;
-						}
+				for (Object object  : roomController.getCurrentObjects()) {
+					if (noun.equals(object.title.toLowerCase())) {
+						outputText = object.description;
+						return outputText;
 					}
 				} 
 				outputText = "What item should I look at";
@@ -156,17 +151,12 @@ public class TextController {
 			break;
 			
 		case "examine" :
-			if(noun == roomController.currentRoom.title.toLowerCase()) {
-				outputText = roomController.currentRoom.Examine();
-				return outputText;
-			} else {
-				for (Object object  : roomController.getCurrentObjects()) {
-					if (noun.equals(object.title.toLowerCase())) {
-						outputText = object.description;
-						return outputText;
-					}
+			for (Object object  : roomController.getCurrentObjects()) {
+				if (noun.equals(object.title.toLowerCase())) {
+					outputText = object.description;
+					return outputText;
 				}
-			}
+			} 
 			outputText = "What should I examine?";
 			break;
 		

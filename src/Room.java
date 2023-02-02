@@ -26,7 +26,7 @@ public abstract class Room {
 	// Defines all of the objects in the north side of the room
 	public Object[] objectsWest;  
 	
-	// Initiates the room data like title, description, and the objects in the room.
+	// Initiates the room data like title, description, and the objects in th
 	public abstract void InitRoom();
 	
 	public String LookNorth() {
