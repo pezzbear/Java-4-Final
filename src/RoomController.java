@@ -8,16 +8,20 @@ import java.util.List;
 
 public class RoomController {
 	
-	public Room currentRoom; // Defines the current room the player is in
+	// Defines the current room the player is in
+	public Room currentRoom; 
 	
-	public Location currentLocation; // Defines the current location of the room they are in. (north, south, east, and west)
+	// Defines the current location of the room they are in. (north, south, east, and west)
+	public Location currentLocation; 
 	
-	private List<Object> currentObjects = new ArrayList<Object>(); // Defines a list of the objects that the player can interact with at a given time.
-																// For example if they are in the north side of a room they can only interact with 
-																// the objects in the north of the room
+	// Defines a list of the objects that the player can interact with at a given time.
+	// For example if they are in the north side of a room they can only interact with 
+	// the objects in the north of the room
+	private List<Object> currentObjects = new ArrayList<Object>(); 
 	
-	private void UpdateCurrentObjects() { 	// Updates the current objects the player can interact with. 
-											// This should be called each time the player moves to a different room / location 
+	// Updates the current objects the player can interact with. 
+	// This should be called each time the player moves to a different room / location 
+	private void UpdateCurrentObjects() { 	
 		
 		currentObjects.clear();
 		switch(currentLocation) {
@@ -52,7 +56,8 @@ public class RoomController {
 		}
 	}
 	
-	public String move(Location location) { // Moves the player to the desired location of the room
+	// Moves the player to the desired location of the room
+	public String move(Location location) { 
 		String outputString = "";
 		switch(location) {
 		case north :
@@ -89,7 +94,8 @@ public class RoomController {
 		return outputString;
 	}
 	
-	public String look(Location location) {
+	// Returns the objects that are in each location of the room
+	public String look(Location location) { 
 		String outputString = "";
 		switch(location) {
 		case north :
@@ -156,8 +162,12 @@ public class RoomController {
 		return outputString;
 	}
 	
-	public List<Object> getCurrentObjects() {
+	// Returns the objects the player can interact with in the current location of the current room they are in. 
+	public List<Object> getCurrentObjects() { 
 		return currentObjects;
 	}
 	
+	public void ChangeRoom(Room room) {
+		
+	}
 }

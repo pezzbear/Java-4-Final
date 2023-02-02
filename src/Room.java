@@ -8,19 +8,25 @@
 
 public abstract class Room {
 	
+	//Title of the room. 
 	public String title;
 	
-	public String description; //Description of the item for when the player enters the room.
+	//Description of the item for when the player enters the room.
+	public String description; 
 	
-	public Object[] objectsNorth; // Defines all of the objects in the north side of the room
+	// Defines all of the objects in the north side of the room
+	public Object[] objectsNorth; 
 	
-	public Object[] objectsSouth;
+	// Defines all of the objects in the north side of the room
+	public Object[] objectsSouth; 
 	
-	public Object[] objectsEast;
+	// Defines all of the objects in the north side of the room
+	public Object[] objectsEast; 
 	
-	public Object[] objectsWest;
+	// Defines all of the objects in the north side of the room
+	public Object[] objectsWest;  
 	
-	
+	// Initiates the room data like title, description, and the objects in the room.
 	public abstract void InitRoom();
 	
 	public String LookNorth() {
@@ -107,4 +113,7 @@ public abstract class Room {
 		return outputString;
 	}
 	
+	public String Examine() {
+		return description;
+	}
 }

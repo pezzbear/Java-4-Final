@@ -1,34 +1,20 @@
 import java.util.*;
 
 public class FlagController {
-	HashMap<String, Boolean> items = new HashMap<String, Boolean>();
+	// Hash map with for the flags
+	private HashMap<String, Boolean> flags = new HashMap<String, Boolean>();
 	
-	public void makedictionary() {
-		items.put("Sword", false);
-		items.put("Torch", true);
-	}
-	
-	public void listitems() {
-		System.out.println("The Items you currently have are:");
-		for(String name : items.keySet()) {
-			if(items.get(name))
-			{
-				System.out.println(name);
-			}
-		}
+	//Initializes all of the flags we are using
+	public void InitializeFlagController() {
+		flags.put("HasSword", false);
+		flags.put("PushedButton", true);
 	}
 	
-	public boolean getitem(String item) {
-		boolean itemstatus = items.get(item);
-		return itemstatus;
+	public boolean GetFlag(String flagID) {
+		return flags.get(flagID);
 	}
-	public void setitem(String item) {
-		if(items.get(item) == false)
-		{
-			items.put(item, true);
-		} else {
-			items.put(item, false);
-		}
+	
+	public void SetFlag(String flagID, boolean value) {
+		flags.replace(flagID, value);
 	}
-	//we are reverting this
 }

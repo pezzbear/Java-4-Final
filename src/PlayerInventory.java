@@ -2,17 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerInventory {
+	// List of all of the items in the players inventory
 	private List<Object> inventoryList = new ArrayList<Object>();
 	
-	public String ShowInventory() { // Show the current inventory on the output console.
-		return "";
+	// Show the current inventory on the output console.
+	public String ShowInventory() { 
+		String output = "";
+		
+		for (Object object : inventoryList) {
+			output = output + object.title + '\r';
+		}
+		
+		return "Inventory: \r" + output;
 	}
 	
-	public void AddItem(Object object) { // Adds the item to the inventory list.
+	// Adds the item to the inventory list.
+	public void AddItem(Object object) { 
 		inventoryList.add(object);
 	}
 	
-	public List<Object> GetItemList() { // Gets the item list
+	// Gets the item list
+	public List<Object> GetItemList() { 
 		return inventoryList;
 	}
 	

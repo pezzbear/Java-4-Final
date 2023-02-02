@@ -21,13 +21,14 @@ public class Game {
 		
 		TextController textController = new TextController();
 		
-		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String nameString = reader.readLine();
+		String nameString = reader.readLine().toLowerCase();
 		
-		textController.InputText(nameString);
+		if (!nameString.equals("end") ){
+			textController.InputText(nameString);
+		} 
 		
-		while(!nameString.equals("END") ){
+		while(!nameString.equals("end") ){
 			nameString = reader.readLine();
 			textController.InputText(nameString);
 		}

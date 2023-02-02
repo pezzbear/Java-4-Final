@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 /*
  * 
  * Defines the TextController that is used to control the text that the player is inputting and the text that will be shown to the player in response.
@@ -14,43 +12,91 @@ public class TextController {
 	PlayerInventory inventory = new PlayerInventory();
 	
 	public void InputText(String inputString) {
+
+		String inputArr[] = inputString.split("\\s+");
 		
-		String lowerCase = inputString.toLowerCase();
+		System.out.println(inputArr.length);
 		
-		if(lowerCase.equals("help") || lowerCase.equals("commands")) {
-			System.out.println("Commands: \r Walk \r Move \r Go \r Grab \r ");
+		String verb = "";
+		String noun = "";
+		String modifier = "";
+		
+		//This is scuffed. Don't worry... Actually, just don't even look at it. 
+		if(inputArr.length == 2) { 
+			verb = inputArr[0].replaceAll("\\s", "");
+			noun = inputArr[1].replaceAll("\\s", "");
+		} else if(inputArr.length == 3) {
+			verb = inputArr[0].replaceAll("\\s", "");
+			modifier = inputArr[1].replaceAll("\\s", "");
+			noun = inputArr[2].replaceAll("\\s", "");
 		}
 		
-		String inputArr[] = lowerCase.split(" ", 2);
-		
-		String verb = inputArr[0];
-		
-		String noun = inputArr[1];
-		
-		DetermineAction(verb, noun);
-		
+		// Determines what do to with the commands. Exception commands are here as well. 
+		// *NOTE* If you are adding a new command it has to be in lower case.
+		switch(verb) { 
+								// Help command exception
+		case "help":
+		case "commands":
+			System.out.println("Commands: \rWalk \rMove \rGo \rGrab \rItems \rWalk Through \rExamine \r "); // I know we are switching println but for now
+			break;
+								// Inventory command exception
+		case "show inventory":
+		case "inventory" :
+		case "show items" :
+		case "items" :
+			System.out.println(inventory.ShowInventory()); 
+			
+		default: 
+			if(!noun.equals("")) {
+				System.out.println(DetermineAction(verb, noun, modifier));
+			}
+			break;
+		}
 	}
 	
-	private String DetermineAction(String verb, String noun) {
+	private String DetermineAction(String verb, String noun, String modifier) {
 		String outputText = "";
 		
 		switch(verb) {
 		case "walk" : // Walk verbs
 		case "move" :
 		case "go" :
-			switch(noun) {
-			case "north" :
-				outputText = roomController.move(Location.north);
-				break;
-			case "south" :
-				outputText = roomController.move(Location.south);
-				break;
-			case "east" :
-				outputText = roomController.move(Location.east);
-				break;
-			case "west" :
-				outputText = roomController.move(Location.west);
-				break;
+			if(!modifier.equals("")) {
+				switch(noun) {
+				case "north" :
+					outputText = roomController.move(Location.north);
+					break;
+				case "south" :
+					outputText = roomController.move(Location.south);
+					break;
+				case "east" :
+					outputText = roomController.move(Location.east);
+					break;
+				case "west" :
+					outputText = roomController.move(Location.west);
+					break;
+				default:
+					outputText = "I can't walk there.";
+					break;
+				}
+				return outputText;
+			} else {
+				if(modifier.equals("through")) {
+					for (Object object  : roomController.getCurrentObjects()) {
+						if (noun.equals(object.title.toLowerCase())) {
+							if(object.canWalkThrough) {
+								outputText = object.WalkThrough();
+								return outputText;
+							} else {
+								outputText = "What door should I walk through.";
+								return outputText;
+							}
+						}
+					}
+				} else {
+					outputText = "Invalid Command.";
+					return outputText;
+				}
 			}
 			break;
 			
@@ -60,7 +106,7 @@ public class TextController {
 		case "pickup" :
 			//SET THE GET ITEM FLAGS
 			for (Object object  : roomController.getCurrentObjects()) {
-				if (noun.equals(object.title)) {
+				if (noun.equals(object.title.toLowerCase())) {
 					if (object.canPickup) {
 						inventory.AddItem(object);
 						outputText = object.Pickup();
@@ -75,23 +121,53 @@ public class TextController {
 			break;
 		
 		case "look" : // look verbs
-			switch(noun) {
-			case "north" :
-				outputText = roomController.look(Location.north);
-				break;
-			case "south" :
-				outputText = roomController.look(Location.south);
-				break;
-			case "east" :
-				outputText = roomController.look(Location.east);
-				break;
-			case "west" :
-				outputText = roomController.look(Location.west);
-				break;
+			if (!modifier.equals("at")) {
+				switch(noun) {
+				case "north" :
+					outputText = roomController.look(Location.north);
+					break;
+				case "south" :
+					outputText = roomController.look(Location.south);
+					break;
+				case "east" :
+					outputText = roomController.look(Location.east);
+					break;
+				case "west" :
+					outputText = roomController.look(Location.west);
+					break;
+				default:
+					outputText = "Where should I look?";
+					break;
+				} 
+			} else {
+				if(noun == roomController.currentRoom.title.toLowerCase()) {
+					outputText = roomController.currentRoom.Examine();
+					return outputText;
+				} else {
+					for (Object object  : roomController.getCurrentObjects()) {
+						if (noun.equals(object.title.toLowerCase())) {
+							outputText = object.description;
+							return outputText;
+						}
+					}
+				} 
+				outputText = "What item should I look at";
 			}
 			break;
 			
 		case "examine" :
+			if(noun == roomController.currentRoom.title.toLowerCase()) {
+				outputText = roomController.currentRoom.Examine();
+				return outputText;
+			} else {
+				for (Object object  : roomController.getCurrentObjects()) {
+					if (noun.equals(object.title.toLowerCase())) {
+						outputText = object.description;
+						return outputText;
+					}
+				}
+			}
+			outputText = "What should I examine?";
 			break;
 		
 			default :
@@ -101,5 +177,5 @@ public class TextController {
 		}
 		return outputText;
 	}
-	
+
 }

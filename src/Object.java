@@ -9,13 +9,20 @@
  */
 public abstract class Object {
 	
-	public String title; // Main name that is used for "calling" the noun. Example: "Table" 
+	// Main name that is used for "calling" the noun. Example: "Table" 
+	public String title; 
 	
-	public String description; //Description of the item for when the player "looks" at the item.
+	//Description of the item for when the player "looks" at the item.
+	public String description; 
 	
+	//If the object is an item that can be picked up
 	public boolean canPickup = false;
 	
-	public abstract void initObject(); // Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
+	//If the object is an item that can be walked through
+	public boolean canWalkThrough = false;
+	
+	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
+	public abstract void initObject(); 
 	
 	// All of the methods below are default "Verb" methods. They are called when a verb modifying a certain Object.
 	
@@ -33,6 +40,12 @@ public abstract class Object {
 	
 	public String Use() {
 		String outputString = "You used the " + title;
+
+		return outputString;
+	}
+	
+	public String WalkThrough() {
+		String outputString = "You walk through the " + title;
 
 		return outputString;
 	}
