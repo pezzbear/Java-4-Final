@@ -21,9 +21,6 @@ public class Game {
 		
 		TextController textController = new TextController();
 		
-		initGame(textController.flagController);
-		
-		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String nameString = reader.readLine().toLowerCase();
 		
@@ -38,11 +35,4 @@ public class Game {
 		
 		System.out.println("-- GAME ENDED --");
 	}
-	
-	public static void initGame(FlagController txt) {
-		FancyMirror fMirror = new FancyMirror();
-		fMirror.initObject(txt);
-		
-	}
-
 }

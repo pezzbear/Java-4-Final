@@ -5,8 +5,6 @@
  */
 public class TextController {
 	
-	public FlagController flagController = new FlagController();
-	
 	public RoomController roomController = new RoomController();
 	
 	public PlayerInventory inventory = new PlayerInventory();

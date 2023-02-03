@@ -21,10 +21,10 @@ public abstract class Object {
 	//If the object is an item that can be walked through
 	public boolean canWalkThrough = false;
 	
-	public FlagController flags;
+	public FlagController flag = FlagController.GetInstance();
 	
 	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
-	public abstract void initObject(FlagController flags); 
+	public abstract void initObject(); 
 	
 	
 	// All of the methods below are default "Verb" methods. They are called when a verb modifying a certain Object.
