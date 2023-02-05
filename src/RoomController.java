@@ -12,7 +12,7 @@ public class RoomController {
 	private static final RoomController instance = new RoomController();
 	
 	private RoomController() {
-		rooms.put("dressingRoom", new DressingRoom());
+		RoomControllerTags();
 	}
 	
 	public static RoomController GetInstance() {
@@ -22,10 +22,10 @@ public class RoomController {
 	private HashMap<String, Room> rooms = new HashMap<String, Room>();
 	
 	// Defines the current room the player is in
-	public Room currentRoom; 
+	public Room currentRoom = rooms.get("dressingRoom"); 
 	
 	// Defines the current location of the room they are in. (north, south, east, and west)
-	public Location currentLocation; 
+	public Location currentLocation = Location.north; 
 	
 	// Defines a list of the objects that the player can interact with at a given time.
 	// For example if they are in the north side of a room they can only interact with 
@@ -34,34 +34,33 @@ public class RoomController {
 	
 	// Updates the current objects the player can interact with. 
 	// This should be called each time the player moves to a different room / location 
-	private void UpdateCurrentObjects() { 	
-		
+	private synchronized void UpdateCurrentObjects() { 	
 		currentObjects.clear();
 		switch(currentLocation) {
 		case north :
-			if (currentRoom.objectsNorth.length != 0) {
+			if (currentRoom.objectsNorth != null) {
 				for (Object object : currentRoom.objectsNorth) {
 					currentObjects.add(object);
 				}
 			}
 			break;
 		case south :
-			if (currentRoom.objectsSouth.length != 0) {
-				for (Object object : currentRoom.objectsNorth) {
+			if (currentRoom.objectsSouth != null) {
+				for (Object object : currentRoom.objectsSouth) {
 					currentObjects.add(object);
 				}
 			}
 			break;
 		case east :
-			if (currentRoom.objectsEast.length != 0) {
-				for (Object object : currentRoom.objectsNorth) {
+			if (currentRoom.objectsEast != null) {
+				for (Object object : currentRoom.objectsEast) {
 					currentObjects.add(object);
 				}
 			}
 			break;
 		case west :
-			if (currentRoom.objectsWest.length != 0) {
-				for (Object object : currentRoom.objectsNorth) {
+			if (currentRoom.objectsWest != null) {
+				for (Object object : currentRoom.objectsWest) {
 					currentObjects.add(object);
 				}
 			}
@@ -70,7 +69,8 @@ public class RoomController {
 	}
 	
 	// Moves the player to the desired location of the room
-	public String move(Location location) { 
+	
+	public synchronized String move(Location location) { 
 		String outputString = "";
 		switch(location) {
 		case north :
@@ -108,15 +108,16 @@ public class RoomController {
 	}
 	
 	// Returns the objects that are in each location of the room
-	public String look(Location location) { 
+	
+	public synchronized String look(Location location) { 
 		String outputString = "";
 		switch(location) {
 		case north :
-			if( currentRoom.objectsNorth.length != 0) {
-				outputString = "In the north side of the room you see ";
+			if( currentRoom.objectsNorth != null) {
+				outputString = "In the north side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsNorth.length; i++) {
 					Object object = currentRoom.objectsNorth[i];
-					if(i < currentRoom.objectsNorth.length) {
+					if(i == currentRoom.objectsNorth.length) {
 						outputString += object.title + ", ";
 					} else {
 						outputString += object.title + ".";
@@ -127,48 +128,49 @@ public class RoomController {
 			}
 			break;
 		case south :
-			if( currentRoom.objectsSouth.length != 0) {
-				outputString = "In the north side of the room you see ";
+			if( currentRoom.objectsSouth != null) {
+				outputString = "In the south side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsSouth.length; i++) {
 					Object object = currentRoom.objectsSouth[i];
-					if(i < currentRoom.objectsSouth.length) {
+					
+					if(i == currentRoom.objectsSouth.length) {
 						outputString += object.title + ", ";
 					} else {
 						outputString += object.title + ".";
 					}
 				}
 			} else {
-				outputString = "You don't see anything in the north side of the room.";
+				outputString = "You don't see anything in the south side of the room.";
 			}
 			break;
 		case east :
-			if( currentRoom.objectsEast.length != 0) {
-				outputString = "In the north side of the room you see ";
+			if( currentRoom.objectsEast != null) {
+				outputString = "In the east side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsEast.length; i++) {
 					Object object = currentRoom.objectsEast[i];
-					if(i < currentRoom.objectsEast.length) {
+					if(i == currentRoom.objectsEast.length) {
 						outputString += object.title + ", ";
 					} else {
 						outputString += object.title + ".";
 					}
 				}
 			} else {
-				outputString = "You don't see anything in the north side of the room.";
+				outputString = "You don't see anything in the east side of the room.";
 			}
 			break;
 		case west :
-			if( currentRoom.objectsWest.length != 0) {
-				outputString = "In the north side of the room you see ";
+			if( currentRoom.objectsWest != null) {
+				outputString = "In the west side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsWest.length; i++) {
 					Object object = currentRoom.objectsWest[i];
-					if(i < currentRoom.objectsWest.length) {
+					if(i == currentRoom.objectsWest.length) {
 						outputString += object.title + ", ";
 					} else {
 						outputString += object.title + ".";
 					}
 				}
 			} else {
-				outputString = "You don't see anything in the north side of the room.";
+				outputString = "You don't see anything in the west side of the room.";
 			}
 			break;
 		}
@@ -176,15 +178,41 @@ public class RoomController {
 	}
 	
 	// Returns the objects the player can interact with in the current location of the current room they are in. 
-	public List<Object> getCurrentObjects() { 
+	
+	public synchronized List<Object> getCurrentObjects() { 
 		return currentObjects;
 	}
 	
-	public void ChangeRoom(Room room) {
-		currentRoom = room;
+	
+	public synchronized void ChangeRoom(String key) {
+		currentRoom = GetRoom(key);
+		UpdateCurrentObjects();
 	}
 	
-	public Room GetRoom(String key) {
+	
+	public synchronized Room GetRoom(String key) {
 		return rooms.get(key);
+	}
+
+	public synchronized void SetLocation() {
+		switch(currentLocation) {
+		case north :
+			currentLocation = Location.south;
+			break;
+		case south :
+			currentLocation = Location.north;
+			break;
+		case east :
+			currentLocation = Location.west;
+			break;
+		case west :
+			currentLocation = Location.east;
+			break;
+		}
+	}
+
+	private synchronized void RoomControllerTags() {
+		rooms.put("dressingRoom", RM_DressingRoom.GetInstance());
+		rooms.put("hallway", RM_Hallway.GetInstance());
 	}
 }

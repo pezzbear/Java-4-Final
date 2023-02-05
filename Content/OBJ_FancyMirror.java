@@ -1,6 +1,5 @@
 
-public class FancyMirror extends Object {
-	
+public class OBJ_FancyMirror extends Object {
 	
 	@Override
 	public void initObject() {

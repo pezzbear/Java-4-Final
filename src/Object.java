@@ -9,6 +9,11 @@
  */
 public abstract class Object {
 	
+	public Object() {
+		initObject();
+		System.out.println(rController);
+	}
+	
 	// Main name that is used for "calling" the noun. Example: "Table" 
 	public String title; 
 	
@@ -21,7 +26,11 @@ public abstract class Object {
 	//If the object is an item that can be walked through
 	public boolean canWalkThrough = false;
 	
+	public String[] connectingRooms = new String[2];
+	
 	public FlagController flag = FlagController.GetInstance();
+	
+	public RoomController rController = RoomController.GetInstance();
 	
 	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
 	public abstract void initObject(); 
@@ -49,7 +58,13 @@ public abstract class Object {
 	
 	public String WalkThrough() {
 		String outputString = "You walk through the " + title;
-
+		for (String string : connectingRooms) {
+			if (rController.GetRoom(string) == rController.currentRoom) {
+				rController.ChangeRoom(string);
+				rController.SetLocation();
+			}
+		}
+		
 		return outputString;
 	}
 	

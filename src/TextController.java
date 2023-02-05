@@ -28,8 +28,6 @@ public class TextController {
 			noun = inputArr[2].replaceAll("\\s", "");
 		}
 		
-		System.out.println(verb + " " + noun);
-		
 		// Determines what do to with the commands. Exception commands are here as well. 
 		// *NOTE* If you are adding a new command it has to be in lower case.
 		switch(verb) { 
@@ -57,10 +55,20 @@ public class TextController {
 		String outputText = "";
 		
 		switch(verb) {
+		case "use" :
+			for (Object object  : roomController.getCurrentObjects()) {
+				if (noun.equals(object.title.toLowerCase())) {
+					outputText = object.Use();
+					return outputText;
+				}
+			} 
+			outputText = "What should I use?";
+			break;
+		
 		case "walk" : // Walk verbs
 		case "move" :
 		case "go" :
-			if(!modifier.equals("")) {
+			if(modifier.equals("")) {
 				switch(noun) {
 				case "north" :
 					outputText = roomController.move(Location.north);
@@ -145,7 +153,7 @@ public class TextController {
 						return outputText;
 					}
 				} 
-				outputText = "What item should I look at";
+				outputText = "What should I look at?";
 			}
 			break;
 			

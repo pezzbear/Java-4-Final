@@ -47,7 +47,7 @@ public class Game {
 		} 
 		
 		while(!nameString.equals("end") ){
-			nameString = reader.readLine();
+			nameString = reader.readLine().toLowerCase();
 			textController.InputText(nameString);
 		}
 		
@@ -57,7 +57,7 @@ public class Game {
 	//ALL GAME INIT STUFF HAPPENS HERE
 	private static void InitializeGame() {
 		RoomController rm = RoomController.GetInstance();
-		rm.currentRoom = rm.GetRoom("dressingRoom");
+		rm.ChangeRoom("dressingRoom");
 	}
 	
 }

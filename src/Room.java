@@ -29,6 +29,7 @@ public abstract class Room {
 	// Initiates the room data like title, description, and the objects in the room
 	public abstract void InitRoom();
 	
+	/*
 	public String LookNorth() {
 		String outputString = "There is nothing north.";
 		if(objectsNorth != null) {
@@ -111,6 +112,7 @@ public abstract class Room {
 		
 		return outputString;
 	}
+	*/
 	
 	public String Examine() {
 		return description;
