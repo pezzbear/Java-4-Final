@@ -13,13 +13,12 @@ public class TextController {
 
 		String inputArr[] = inputString.split("\\s+");
 		
-		System.out.println(inputArr.length);
-		
 		String verb = "";
 		String noun = "";
 		String modifier = "";
 		
 		//This is scuffed. Don't worry... Actually, just don't even look at it. 
+		verb = inputArr[0];
 		if(inputArr.length == 2) { 
 			verb = inputArr[0].replaceAll("\\s", "");
 			noun = inputArr[1].replaceAll("\\s", "");
@@ -28,6 +27,8 @@ public class TextController {
 			modifier = inputArr[1].replaceAll("\\s", "");
 			noun = inputArr[2].replaceAll("\\s", "");
 		}
+		
+		System.out.println(verb + " " + noun);
 		
 		// Determines what do to with the commands. Exception commands are here as well. 
 		// *NOTE* If you are adding a new command it has to be in lower case.
