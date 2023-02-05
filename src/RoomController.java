@@ -4,9 +4,22 @@
  */
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RoomController {
+	
+	private static final RoomController instance = new RoomController();
+	
+	private RoomController() {
+		rooms.put("dressingRoom", new DressingRoom());
+	}
+	
+	public static RoomController GetInstance() {
+		return instance;
+	}
+	
+	private HashMap<String, Room> rooms = new HashMap<String, Room>();
 	
 	// Defines the current room the player is in
 	public Room currentRoom; 
@@ -168,6 +181,10 @@ public class RoomController {
 	}
 	
 	public void ChangeRoom(Room room) {
-		
+		currentRoom = room;
+	}
+	
+	public Room GetRoom(String key) {
+		return rooms.get(key);
 	}
 }

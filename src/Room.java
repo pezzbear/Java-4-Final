@@ -26,13 +26,12 @@ public abstract class Room {
 	// Defines all of the objects in the north side of the room
 	public Object[] objectsWest;  
 	
-	// Initiates the room data like title, description, and the objects in th
+	// Initiates the room data like title, description, and the objects in the room
 	public abstract void InitRoom();
 	
 	public String LookNorth() {
 		String outputString = "There is nothing north.";
-		
-		if(objectsNorth.length != 0) {
+		if(objectsNorth != null) {
 			String objectString = "";
 			for(int i = 0; i < objectsNorth.length; i++) {
 				Object getObject = objectsNorth[i];
@@ -53,7 +52,7 @@ public abstract class Room {
 	public String LookSouth() {
 		String outputString = "There is nothing south.";
 		
-		if(objectsSouth.length != 0) {
+		if(objectsSouth != null) {
 			String objectString = "";
 			for(int i = 0; i < objectsSouth.length; i++) {
 				Object getObject = objectsSouth[i];
@@ -74,7 +73,7 @@ public abstract class Room {
 	public String LookEast() {
 		String outputString = "There is nothing east.";
 		
-		if(objectsEast.length != 0) {
+		if(objectsEast != null) {
 			String objectString = "";
 			for(int i = 0; i < objectsEast.length; i++) {
 				Object getObject = objectsEast[i];
@@ -95,7 +94,7 @@ public abstract class Room {
 	public String LookWest() {
 		String outputString = "There is nothing west.";
 		
-		if(objectsWest.length != 0) {
+		if(objectsWest != null) {
 			String objectString = "";
 			for(int i = 0; i < objectsWest.length; i++) {
 				Object getObject = objectsWest[i];

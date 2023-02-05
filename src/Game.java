@@ -17,6 +17,8 @@ public class Game {
 			log.error(e);
 		}
 		
+		InitializeGame();
+		
 		//ASCII title for some extra 80s look
 		System.out.println("  ___  __    _____  _    _  _  _    ___  __  __  ____  ____  ____ ");
 		System.out.println(" / __)(  )  (  _  )( |/|/ )( |( )  / __)(  )(  )(  _ )( ___)(  _ )");
@@ -47,4 +49,11 @@ public class Game {
 		
 		System.out.println("-- GAME ENDED --");
 	}
+	
+	//ALL GAME INIT STUFF HAPPENS HERE
+	private static void InitializeGame() {
+		RoomController rm = RoomController.GetInstance();
+		rm.currentRoom = rm.GetRoom("dressingRoom");
+	}
+	
 }
