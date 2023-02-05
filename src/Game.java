@@ -10,12 +10,14 @@ public class Game {
 	static Logger log = LogManager.getLogger(Game.class.getName());
 	
 	public static void main(String[] args) throws IOException {
+		/*
 		try {
 		log.debug("hello World");
 		}
 		catch(Exception e) {
 			log.error(e);
 		}
+		*/
 		
 		InitializeGame();
 		
@@ -32,6 +34,8 @@ public class Game {
 		System.out.println("  /__|  (  _ | ( {} )( ___)( |( )(_  _)(  )(  )(  _ }( ___)/ __)");
 		System.out.println(" /(__)]  )(_) ) {  /  )__)  )  (   )(   )(__)(  )   / )__)  }_ )");
 		System.out.println("(__)(__)(____/   {/  (____)(_){_) (__) (______)(_))_)(____)(___/");
+		
+		System.out.println("Commands: \rWalk \rMove \rGo \rGrab \rItems \rWalk Through \rExamine \r ");
 		
 		TextController textController = new TextController();
 		
