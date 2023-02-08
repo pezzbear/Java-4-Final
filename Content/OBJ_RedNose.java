@@ -12,6 +12,7 @@ public class OBJ_RedNose extends Object{
 	
 	//Did not change this yet-don't know what to set flag.GetFlag to or if I should make one in the FlagController
 	//Emily
+	//Test comment
 	@Override
 	public String Use() {
 		if (flag.GetFlag("hasMakupOn")) {
