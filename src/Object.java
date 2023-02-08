@@ -27,10 +27,10 @@ public abstract class Object {
 	public boolean canWalkThrough = false;
 	
 	public String[] connectingRooms = new String[2];
+
+	public RoomController rController = RoomController.GetInstance();
 	
 	public FlagController flag = FlagController.GetInstance();
-	
-	public RoomController rController = RoomController.GetInstance();
 	
 	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
 	public abstract void initObject(); 

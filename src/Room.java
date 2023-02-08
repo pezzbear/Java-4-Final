@@ -29,6 +29,7 @@ public abstract class Room {
 	// Initiates the room data like title, description, and the objects in the room
 	public abstract void InitRoom();
 	
+	public RoomController rController = RoomController.GetInstance();
 	/*
 	public String LookNorth() {
 		String outputString = "There is nothing north.";

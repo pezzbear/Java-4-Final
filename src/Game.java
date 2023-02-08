@@ -58,6 +58,7 @@ public class Game {
 	private static void InitializeGame() {
 		RoomController rm = RoomController.GetInstance();
 		rm.ChangeRoom("dressingRoom");
+		System.out.println(rm);
 	}
 	
 }

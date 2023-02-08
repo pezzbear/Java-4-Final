@@ -5,6 +5,7 @@ public class RM_DressingRoom extends Room{
 	
 	private RM_DressingRoom() {
 		InitRoom();
+		System.out.println(rController);
 	}
 	
 	public static RM_DressingRoom GetInstance() {

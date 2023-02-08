@@ -213,6 +213,6 @@ public class RoomController {
 
 	private synchronized void RoomControllerTags() {
 		rooms.put("dressingRoom", RM_DressingRoom.GetInstance());
-		rooms.put("hallway", RM_Hallway.GetInstance());
+		//rooms.put("hallway", RM_Hallway.GetInstance());
 	}
 }
