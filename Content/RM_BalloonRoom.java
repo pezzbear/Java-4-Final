@@ -32,5 +32,9 @@ public class RM_BalloonRoom extends Room{
 		
 		//objectsWest = new Object[1];
 		//objectsWest[0] = new OBJ_DressingHallwayDoor();
+		
+		//Add Stage room door to Balloon Room
+		objectsSouth = new Object[1];
+		objectsSouth[0] = new OBJ_StageBalloonDoor();
 	}
 }

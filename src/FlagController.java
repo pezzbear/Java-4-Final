@@ -41,7 +41,7 @@ public class FlagController {
 	}
 	
 	private synchronized void BicylceRoomFlags() {
-		
+		flags.put("hasRedNose", false);
 	}
 	
 	private synchronized void HallwayFlags() {
@@ -49,7 +49,7 @@ public class FlagController {
 	}
 	
 	private synchronized void StageRoomFlags() {
-		
+		flags.put("stageExitDoorIsLock", true);
 	}
 	
 	private synchronized void StorageRoomFlags() {

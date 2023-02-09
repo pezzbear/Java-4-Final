@@ -19,17 +19,15 @@ public class RM_BicycleRoom extends Room{
 		title = "Bicylce Room";
 		description = "A room filled with tiny clown bikes, a door, and a red clown nose on a pedestal.";
 		
-		//These have not been changed.  
-		//Need explanation on which door is which for each direction
+		//Check these over
 		//Emily
 		
-		//objectsNorth = new Object[1];
-		//objectsNorth[0] = new OBJ_HallwayStorageDoor();
+		//Add red nose to the room
+		objectsSouth = new Object[1];
+		objectsSouth[0] = new OBJ_RedNose();
 		
-		//objectsEast = new Object[1];
-		//objectsEast[0] = new OBJ_HallwayStageDoor();
-		
-		//objectsWest = new Object[1];
-		//objectsWest[0] = new OBJ_DressingHallwayDoor();
+		//Add stage bicycle room door to bicycle room
+		objectsWest = new Object[1];
+		objectsWest[0] = new OBJ_StageBicycleDoor();
 	}
 }

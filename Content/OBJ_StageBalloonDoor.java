@@ -1,6 +1,6 @@
 
-public class OBJ_HallwayDressingDoor extends Object {
-
+public class OBJ_StageBalloonDoor extends Object{
+	
 	//@Override initObject() - add details about object
 	@Override
 	public void initObject() {
@@ -9,8 +9,8 @@ public class OBJ_HallwayDressingDoor extends Object {
 		canPickup = false;
 		canWalkThrough = true;
 		
-		//add connecting rooms
-		connectingRooms[0] = "dressingRoom";
-		connectingRooms[1] = "hallway";
+		//Add connecting rooms
+		connectingRooms[0] = "stageRoom";
+		connectingRooms[1] = "balloonRoom";
 	}
 }

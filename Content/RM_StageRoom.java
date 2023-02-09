@@ -19,17 +19,23 @@ public class RM_StageRoom extends Room{
 		title = "Stage Room";
 		description = "A room with a stage and a door on each of the four walls.";
 		
-		//These have not been changed.  
-		//Need explanation on which door is which for each direction
+		//Can check these
 		//Emily
 		
-		//objectsNorth = new Object[1];
-		//objectsNorth[0] = new OBJ_HallwayStorageDoor();
+		//Add Balloon room door to the Stage room
+		objectsNorth = new Object[1];
+		objectsNorth[0] = new OBJ_StageBalloonDoor();
 		
-		//objectsEast = new Object[1];
-		//objectsEast[0] = new OBJ_HallwayStageDoor();
+		//Add Bicycle room door to the Stage room
+		objectsEast = new Object[1];
+		objectsEast[0] = new OBJ_StageBicycleDoor();
 		
-		//objectsWest = new Object[1];
-		//objectsWest[0] = new OBJ_DressingHallwayDoor();
+		//Add the Hallway door to the Stage room
+		objectsWest = new Object[1];
+		objectsWest[0] = new OBJ_HallwayStageDoor();
+		
+		//Add the Exit door to the Stage room
+		objectsSouth = new Object[1];
+		objectsSouth[0] = new OBJ_StageExitDoor();
 	}
 }

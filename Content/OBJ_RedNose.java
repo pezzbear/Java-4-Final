@@ -10,15 +10,21 @@ public class OBJ_RedNose extends Object{
 		canWalkThrough = false;
 	}
 	
-	//Did not change this yet-don't know what to set flag.GetFlag to or if I should make one in the FlagController
-	//Emily
-	//Test comment
+	//@Override Use()
 	@Override
 	public String Use() {
-		if (flag.GetFlag("hasMakupOn")) {
-			return "The Mirror seems to recognize you. You hear a clicking sound";
+		//Get and set the flags
+		if (flag.GetFlag("hasRedNose")) {
+			//This SetFlag may be incorrect
+			//Emily
+			flag.SetFlag("stageExitDoorIsLock", false);
+			
+			//return if door is unlocked
+			return "You danced just like a clown!";
 		} else {
-			return "You see your reflection in the Mirror. Maybe I have to change my appearance.";
+			
+			//return if door is locked
+			return "You're not acting the part. You may not exit yet.";
 		}
 		
 	}
