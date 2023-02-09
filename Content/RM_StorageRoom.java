@@ -18,7 +18,8 @@ public class RM_StorageRoom extends Room{
 		objectsSouth = new Object[1];
 		objectsSouth[0] = new OBJ_HallwayStorageDoor();
 		
-		objectsNorth = new Object[1];
-		objectsNorth[0] = new OBJ_HallwayDressingDoor();
+		objectsNorth = new Object[2];
+		objectsNorth[0] = new OBJ_Cage();
+		objectsNorth[1] = new OBJ_MakeupKit();
 	}
 }

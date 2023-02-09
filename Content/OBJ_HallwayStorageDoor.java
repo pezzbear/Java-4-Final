@@ -8,7 +8,7 @@ public class OBJ_HallwayStorageDoor extends Object {
 		description = "It Opens.";
 		canPickup = false;
 		canWalkThrough = true;
-		
-		//NEED TO ADD THE 2 ROOMS THIS DOOR CONNECTS TO, TO THE CONNECTING ROOMS ARRAY.
+		connectingRooms[0] = "storageRoom";
+		connectingRooms[1] = "hallway";
 	}
 }

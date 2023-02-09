@@ -10,6 +10,7 @@ public class FlagController {
 		BicylceRoomFlags();
 		HallwayFlags();
 		StageRoomFlags();
+		StorageRoomFlags();
 	};
 	
 	public static FlagController GetInstance() {
@@ -44,7 +45,7 @@ public class FlagController {
 	}
 	
 	private synchronized void HallwayFlags() {
-		
+		flags.put("hallwayStageDoorIsLock", true);
 	}
 	
 	private synchronized void StageRoomFlags() {
@@ -52,7 +53,8 @@ public class FlagController {
 	}
 	
 	private synchronized void StorageRoomFlags() {
-		
+		flags.put("cageIsOpen", false);
+		flags.put("hasMakeup", false);
 	}
 	
 }

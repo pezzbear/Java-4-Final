@@ -2,21 +2,6 @@
 public class Intro {
 	//ASCII title for some extra 80s look
 	public void showTitle() { 
-		/*
-		System.out.println("  ___  __    _____  _    _  _  _    ___  __  __  ____  ____  ____ ");
-		System.out.println(" / __)(  )  (  _  )( |/|/ )( |( )  / __)(  )(  )(  _ )( ___)(  _ )");
-		System.out.println("( (__  )(__  )(_)(  )    (  )  (   }__ ) )(__)(  )___/ )__)  )   /");
-		System.out.println(" {___)(____)(_____)(__/{__)(_){ )  (___/(______)(__)  (____)(_))_)");
-		System.out.println(" ____  __  __  _  _    _   _  _____  __  __  ___  ____ ");
-		System.out.println("( ___)(  )(  )( |( )  ( )_( )(  _  )(  )(  )/ __)( ___)");
-		System.out.println(" )__)  )(__)(  )  (    ) _ (  )(_)(  )(__)(  }_ ) )__) ");
-		System.out.println("(__)  (______)(_){_)  (_) (_)(_____)(______)(___/(____)");
-		System.out.println("   __    ____   _  _  ____  _  _  ____  __  __  ____  ____  ___"); 
-		System.out.println("  /__|  (  _ | ( {} )( ___)( |( )(_  _)(  )(  )(  _ }( ___)/ __)");
-		System.out.println(" /(__)]  )(_) ) {  /  )__)  )  (   )(   )(__)(  )   / )__)  }_ )");
-		System.out.println("(__)(__)(____/   {/  (____)(_){_) (__) (______)(_))_)(____)(___/");
-		*/
-		
 		System.out.println("\r\n"
 				+ " ▄████▄   ██▓     ▒█████   █     █░███▄    █      ██████  █    ██  ██▓███  ▓█████  ██▀███  \r\n"
 				+ "▒██▀ ▀█  ▓██▒    ▒██▒  ██▒▓█░ █ ░█░██ ▀█   █    ▒██    ▒  ██  ▓██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒\r\n"
@@ -53,6 +38,6 @@ public class Intro {
 	}
 			
 	public void introParagraph() {
-		
+		System.out.println("START OF THE GAME INTRODUCTION ETC...");
 	}
 }

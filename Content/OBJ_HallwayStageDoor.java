@@ -8,7 +8,29 @@ public class OBJ_HallwayStageDoor extends Object{
 		description = "It Opens.";
 		canPickup = false;
 		canWalkThrough = true;
-		
-		//NEED TO ADD THE 2 ROOMS THIS DOOR CONNECTS TO, TO THE CONNECTING ROOMS ARRAY.
+		connectingRooms[0] = "stageRoom";
+		connectingRooms[1] = "hallway";
 	}
+	
+	
+	@Override
+	public String WalkThrough() {
+		String outputString = "";
+		if(!flag.GetFlag("hallwayStageDoorIsLock")) {
+			outputString = "You walk through the " + title;
+			if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {
+				rController.ChangeRoom(connectingRooms[1]);
+			} else {
+				rController.ChangeRoom(connectingRooms[0]);
+			}
+			rController.SetLocation();
+			
+			outputString = outputString + "\r The room around you looks like " + rController.currentRoom.description;
+		} else {
+			outputString = "The Door seems to be locked";
+		}
+		
+		return outputString;
+	}
+	
 }

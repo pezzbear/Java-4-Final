@@ -2,6 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerInventory {
+	
+	private static final PlayerInventory instance = new PlayerInventory();
+	
+	private PlayerInventory() {
+	
+	};
+	
+	public static PlayerInventory GetInstance() {
+		return instance;
+	}
+	
 	// List of all of the items in the players inventory
 	private List<Object> inventoryList = new ArrayList<Object>();
 	

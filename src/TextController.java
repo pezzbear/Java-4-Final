@@ -7,7 +7,7 @@ public class TextController {
 	
 	public RoomController roomController = RoomController.GetInstance();
 	
-	public PlayerInventory inventory = new PlayerInventory();
+	public PlayerInventory inventory = PlayerInventory.GetInstance();
 	
 	public void InputText(String inputString) {
 
