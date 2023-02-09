@@ -22,6 +22,6 @@ public class RM_Hallway extends Room{
 		objectsEast[0] = new OBJ_HallwayStageDoor();
 		
 		objectsWest = new Object[1];
-		objectsWest[0] = new OBJ_DressingHallwayDoor();
+		objectsWest[0] = new OBJ_HallwayDressingDoor();
 	}
 }

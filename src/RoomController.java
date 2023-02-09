@@ -12,7 +12,6 @@ public class RoomController {
 	private static final RoomController instance = new RoomController();
 	
 	private RoomController() {
-		RoomControllerTags();
 	}
 	
 	public static RoomController GetInstance() {
@@ -31,6 +30,16 @@ public class RoomController {
 	// For example if they are in the north side of a room they can only interact with 
 	// the objects in the north of the room
 	private List<Object> currentObjects = new ArrayList<Object>(); 
+	
+	//Adds all of the rooms in the game to a "rooms" dictionary. You set the rooms in the Doors by using these tags
+	public synchronized void RoomControllerTags() {
+		rooms.put("dressingRoom", RM_DressingRoom.GetInstance());
+		rooms.put("hallway", RM_Hallway.GetInstance());
+		rooms.put("balloonRoom", RM_BalloonRoom.GetInstance());
+		rooms.put("bicycleRoom", RM_BicycleRoom.GetInstance());
+		rooms.put("stageRoom", RM_StageRoom.GetInstance());
+		rooms.put("storageRoom", RM_StorageRoom.GetInstance());
+	}
 	
 	// Updates the current objects the player can interact with. 
 	// This should be called each time the player moves to a different room / location 
@@ -211,8 +220,5 @@ public class RoomController {
 		}
 	}
 
-	private synchronized void RoomControllerTags() {
-		rooms.put("dressingRoom", RM_DressingRoom.GetInstance());
-		//rooms.put("hallway", RM_Hallway.GetInstance());
-	}
+	
 }

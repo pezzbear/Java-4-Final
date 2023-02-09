@@ -11,7 +11,6 @@ public abstract class Object {
 	
 	public Object() {
 		initObject();
-		System.out.println(rController);
 	}
 	
 	// Main name that is used for "calling" the noun. Example: "Table" 
@@ -58,12 +57,14 @@ public abstract class Object {
 	
 	public String WalkThrough() {
 		String outputString = "You walk through the " + title;
-		for (String string : connectingRooms) {
-			if (rController.GetRoom(string) == rController.currentRoom) {
-				rController.ChangeRoom(string);
-				rController.SetLocation();
-			}
+		if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {
+			rController.ChangeRoom(connectingRooms[1]);
+		} else {
+			rController.ChangeRoom(connectingRooms[0]);
 		}
+		rController.SetLocation();
+		
+		outputString = outputString + "\r The room around you looks like " + rController.currentRoom.description;
 		
 		return outputString;
 	}

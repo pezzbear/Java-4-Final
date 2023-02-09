@@ -6,6 +6,10 @@ public class FlagController {
 	
 	private FlagController() {
 		DressingRoomFlags();
+		BalloonRoomFlags();
+		BicylceRoomFlags();
+		HallwayFlags();
+		StageRoomFlags();
 	};
 	
 	public static FlagController GetInstance() {
@@ -24,8 +28,32 @@ public class FlagController {
 		flags.replace(flagID, value);
 	}
 	
+	//The Following methods are used to organize and initialize the flags for each room. 
+	
 	private synchronized void DressingRoomFlags() {
 		flags.put("hasMakupOn", false);
 		flags.put("mirrorOpen", false);
 	}
+	
+	private synchronized void BalloonRoomFlags() {
+		
+	}
+	
+	private synchronized void BicylceRoomFlags() {
+		
+	}
+	
+	private synchronized void HallwayFlags() {
+		
+	}
+	
+	private synchronized void StageRoomFlags() {
+		
+	}
+	
+	private synchronized void StorageRoomFlags() {
+		
+	}
+	
 }
+

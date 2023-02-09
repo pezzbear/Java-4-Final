@@ -5,7 +5,6 @@ public class RM_DressingRoom extends Room{
 	
 	private RM_DressingRoom() {
 		InitRoom();
-		System.out.println(rController);
 	}
 	
 	public static RM_DressingRoom GetInstance() {
@@ -21,7 +20,7 @@ public class RM_DressingRoom extends Room{
 		objectsSouth[0] = new OBJ_FancyMirror();
 		
 		objectsEast = new Object[1];
-		objectsEast[0] = new OBJ_DressingHallwayDoor();
+		objectsEast[0] = new OBJ_HallwayDressingDoor();
 	}
 
 }

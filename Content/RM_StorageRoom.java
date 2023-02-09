@@ -19,6 +19,6 @@ public class RM_StorageRoom extends Room{
 		objectsSouth[0] = new OBJ_HallwayStorageDoor();
 		
 		objectsNorth = new Object[1];
-		objectsNorth[0] = new OBJ_DressingHallwayDoor();
+		objectsNorth[0] = new OBJ_HallwayDressingDoor();
 	}
 }
