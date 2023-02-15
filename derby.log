@@ -1,12 +1,12 @@
 ----------------------------------------------------------------
-Tue Feb 14 21:41:37 CST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0186-5329-dab7-000007185718 
-on database directory C:\Users\emily\git\Java-4-Final\gameDatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
-Loaded from file:/C:/Users/emily/Downloads/db-derby-10.12.1.1-lib/db-derby-10.12.1.1-lib/lib/derby.jar
-java.vendor=Eclipse Adoptium
-java.runtime.version=17.0.4.1+1
-user.dir=C:\Users\emily\git\Java-4-Final
-os.name=Windows 11
+Wed Feb 15 11:53:28 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0186-5635-bdb8-00001f04df00 
+on database directory C:\Users\Edan\Desktop\Java 4\Final\Java-4-Final\gameDatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@659e0bfd 
+Loaded from file:/C:/Users/Edan/Desktop/Java%204/db-derby-10.12.1.1-lib/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=16.0.1+9-24
+user.dir=C:\Users\Edan\Desktop\Java 4\Final\Java-4-Final
+os.name=Windows 10
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
