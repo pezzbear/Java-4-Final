@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Feb 14 21:41:37 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0186-5329-dab7-000007185718 
+on database directory C:\Users\emily\git\Java-4-Final\gameDatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@22d8cfe0 
+Loaded from file:/C:/Users/emily/Downloads/db-derby-10.12.1.1-lib/db-derby-10.12.1.1-lib/lib/derby.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.4.1+1
+user.dir=C:\Users\emily\git\Java-4-Final
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
