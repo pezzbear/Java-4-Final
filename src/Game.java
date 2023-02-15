@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.PublicKey;
+import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,9 +11,11 @@ public class Game {
 
 	static Logger log = LogManager.getLogger(Game.class.getName());
 	
+	private static DatabaseControls dbControls = new DatabaseControls();
+	
 	private static Intro intro = new Intro();
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, SQLException {
 		/*
 		try {
 		log.debug("hello World");
@@ -27,6 +30,8 @@ public class Game {
 		intro.introParagraph();
 		
 		InitializeGame();
+		
+		dbControls.GetItem();
 	
 		System.out.println("Type Help or Commands for a list of commands");
 		

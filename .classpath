@@ -12,7 +12,7 @@
 	<classpathentry kind="lib" path="apache-log4j-2.17.2-bin/log4j-api-2.17.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="apache-log4j-2.17.2-bin/log4j-core-2.17.2.jar"/>
 	<classpathentry kind="lib" path="apache-log4j-2.17.2-bin/log4j-core-2.17.2-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/emily/Downloads/db-derby-10.12.1.1-lib/db-derby-10.12.1.1-lib/lib/derby.jar"/>
-	<classpathentry kind="lib" path="C:/Users/emily/Downloads/db-derby-10.12.1.1-lib/db-derby-10.12.1.1-lib/lib/derbyclient.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Edan/Desktop/Java 4/db-derby-10.12.1.1-lib/lib/derby.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Edan/Desktop/Java 4/db-derby-10.12.1.1-lib/lib/derbyclient.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
