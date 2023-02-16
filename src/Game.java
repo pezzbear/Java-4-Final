@@ -11,7 +11,7 @@ public class Game {
 
 	static Logger log = LogManager.getLogger(Game.class.getName());
 	
-	private static DatabaseControls dbControls = new DatabaseControls();
+	//private static DatabaseControls dbControls = new DatabaseControls();
 	
 	private static Intro intro = new Intro();
 	
@@ -31,7 +31,7 @@ public class Game {
 		
 		InitializeGame();
 		
-		dbControls.GetItem();
+		//dbControls.GetItem();
 	
 		System.out.println("Type Help or Commands for a list of commands");
 		

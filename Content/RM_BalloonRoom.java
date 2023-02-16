@@ -20,15 +20,13 @@ public class RM_BalloonRoom extends Room{
 		description = "It's filled to the ceiling with balloons! Inside there is a lever to open a room,"
 				+ "a button that opens a locked crate, which is also hidden in this room. There is also a door."; 
 		
-		//These have not been changed.  
-		//Need explanation on which door is which for each direction
-		//Emily
-		
 		//objectsNorth = new Object[1];
 		//objectsNorth[0] = new OBJ_HallwayStorageDoor();
 		
-		//objectsEast = new Object[1];
-		//objectsEast[0] = new OBJ_HallwayStageDoor();
+		//Add Crate and Outfit object to the room
+		objectsEast = new Object[2];
+		objectsEast[0] = new OBJ_Crate();
+		objectsEast[1] = new OBJ_Outfit();
 		
 		//objectsWest = new Object[1];
 		//objectsWest[0] = new OBJ_DressingHallwayDoor();

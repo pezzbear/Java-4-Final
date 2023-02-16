@@ -37,7 +37,7 @@ public class FlagController {
 	}
 	
 	private synchronized void BalloonRoomFlags() {
-		
+		flags.put("crateIsLock", true);
 	}
 	
 	private synchronized void BicylceRoomFlags() {
