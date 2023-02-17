@@ -34,7 +34,9 @@ public class TextController {
 								// Help command exception
 		case "help":
 		case "commands":
-			System.out.println("Commands: \r  -Walk \r  -Move \r  -Go \r  -Grab \r  -Items \r  -Walk Through \r  -Examine \r "); // I know we are switching println but for now
+			System.out.println("Commands: \r  -Walk + (north, east, south, west) \r  -Move + (north, east, south, west) \r  -Go + (north, east, south, west)"
+					+ "\r  -Look + (north, east, south, west) \r  -Grab \r  -Get \r  -Take \r  -Pickup \r  -Items \r  -Walk Through Door"
+					+ "\r  -Examine + (item name) \r "); // I know we are switching println but for now
 			break;
 								// Inventory command exception
 		case "show inventory":

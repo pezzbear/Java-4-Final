@@ -68,6 +68,11 @@ public class Intro {
 	}
 			
 	public void introParagraph() {
-		System.out.println("START OF THE GAME INTRODUCTION ETC...");
+		System.out.println("Welcome to Clown Super Fun House Adventures!");
+		System.out.println("You are trapped and the only way out is"
+				+ "to trick the House into thinking you too are a clown.");
+		System.out.println("Collect the clown makeup, outfit, and nose to attempt your trickery -- "
+				+ "some items may be easier to retrieve than others.");
+		System.out.println("You awake in the dressing room -- inside is a fancy mirror.");
 	}
 }
