@@ -2,6 +2,7 @@
 public class RM_BicycleRoom extends Room{
 	
 	//Create a new instance of RM_BicycleRoom
+	//Chapter 1- #6 Proper use of the Final Keyword.
 	private static final RM_BicycleRoom instance = new RM_BicycleRoom();
 
 	//Create a constructor of the RM_BicycleRoom class
@@ -10,6 +11,7 @@ public class RM_BicycleRoom extends Room{
 	}
 		
 	//Create GetInstance() to return instance of RM_BicycleRoom
+	//Chapter 1- #5 Proper use of the Static Keyword.
 	public static RM_BicycleRoom GetInstance() {
 		return instance;
 	}

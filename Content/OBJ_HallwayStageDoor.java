@@ -13,6 +13,7 @@ public class OBJ_HallwayStageDoor extends Object{
 	}
 	
 	//@override WalkThrough() to check if exit is locked or unlocked
+	//Chapter 1- #9 Proper use of @Override notation.
 	@Override
 	public String WalkThrough() {
 		String outputString = "";

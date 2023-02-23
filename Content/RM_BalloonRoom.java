@@ -2,6 +2,7 @@
 public class RM_BalloonRoom extends Room{
 	
 	//Create new instance of RM_BalloonRoom
+	//Chapter 1- #6 Proper use of the Final Keyword.
 	private static final RM_BalloonRoom instance = new RM_BalloonRoom();
 
 	//Create a constructor of the RM_BalloonRoom class
@@ -10,6 +11,7 @@ public class RM_BalloonRoom extends Room{
 	}
 	
 	//Create GetInstance() to return instance of RM_BalloonRoom
+	//Chapter 1- #5 Proper use of the Static Keyword.
 	public static RM_BalloonRoom GetInstance() {
 		return instance;
 	}

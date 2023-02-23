@@ -1,11 +1,17 @@
 
 public class RM_Hallway extends Room{
+	
+	//Create a new instance of RM_Hallway
+	//Chapter 1- #6 Proper use of the Final Keyword.
 	private static final RM_Hallway instance = new RM_Hallway();
 	
+	//Create a constructor of the RM_Hallway class
 	private RM_Hallway() {
 		InitRoom();
 	}
 
+	//Create GetInstance() to return instance of RM_Hallway
+	//Chapter 1- #5 Proper use of the Static Keyword.
 	public static RM_Hallway GetInstance() {
 		return instance;
 	}
