@@ -39,6 +39,7 @@ public class Game {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String nameString = reader.readLine().toLowerCase();
+		FlagController flagController = FlagController.GetInstance();
 		
 		if (!nameString.equals("quit") ){
 			textController.InputText(nameString);
@@ -46,7 +47,9 @@ public class Game {
 		
 		while(!nameString.equals("quit") ){
 			nameString = reader.readLine().toLowerCase();
-			textController.InputText(nameString);
+			if (!flagController.GetFlag("gameIsWon") ){
+				textController.InputText(nameString);
+			}
 		}
 		
 		System.out.println("-- GAME ENDED --");

@@ -44,6 +44,7 @@ public class TextController {
 		case "show items" :
 		case "items" :
 			System.out.println(inventory.ShowInventory()); 
+			break;
 			
 		default: 
 			if(!noun.equals("")) {
@@ -177,4 +178,5 @@ public class TextController {
 		return outputText;
 	}
 
+	
 }

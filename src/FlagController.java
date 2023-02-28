@@ -50,6 +50,7 @@ public class FlagController {
 	
 	private synchronized void StageRoomFlags() {
 		flags.put("stageExitDoorIsLock", true);
+		flags.put("gameIsWon", false);
 	}
 	
 	private synchronized void StorageRoomFlags() {

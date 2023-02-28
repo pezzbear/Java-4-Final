@@ -39,6 +39,7 @@ public class RoomController {
 		rooms.put("bicycleRoom", RM_BicycleRoom.GetInstance());
 		rooms.put("stageRoom", RM_StageRoom.GetInstance());
 		rooms.put("storageRoom", RM_StorageRoom.GetInstance());
+		rooms.put("exitRoom", RM_ExitRoom.GetInstance());
 	}
 	
 	// Updates the current objects the player can interact with. 

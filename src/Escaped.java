@@ -34,6 +34,9 @@ public class Escaped {
 						+ " ╘  █        Γ  █  ▀       █      █            █ █▌    █▌         ╙             \r\n"
 						+ "           [    █                                                               \r\n"
 						+ "           `    '                                                             \r\n" + "");
+		
+		System.out.println("You won the game! Congratulations!");
+		System.out.println("Use the Quit command to quit the game.");
 
 	}
 }

@@ -21,7 +21,6 @@ public class OBJ_StageExitDoor extends Object{
 		
 		//Check if the door is locked or unlocked and send location and description of room
 		if(!flag.GetFlag("stageExitDoorIsLock")) {
-			outputString = "You walk through the " + title;
 			if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {
 				rController.ChangeRoom(connectingRooms[1]);
 			} else {
@@ -29,7 +28,12 @@ public class OBJ_StageExitDoor extends Object{
 			}
 			rController.SetLocation();
 			
-			outputString = outputString + "\r The room around you looks like " + rController.currentRoom.description;
+			Escaped escaped = new Escaped();
+			
+			flag.SetFlag("gameIsWon", true);
+			
+			escaped.escapeTitle();
+	
 		} else {
 			outputString = "The Door seems to be locked";
 		}
