@@ -27,7 +27,13 @@ public class Game {
 		
 		intro.showTitle();
 		
+		//Show the supplier example
+		intro.supplierExample();
+		
 		intro.introParagraph();
+		
+		//Show the consumer example
+		intro.consumerExample();
 		
 		InitializeGame();
 		
