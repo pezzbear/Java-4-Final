@@ -1,5 +1,8 @@
 import java.sql.*;
-
+/**
+ * Throws exceptions for the derby database
+ * 
+ */
 public class DatabaseControls {
 	
 	

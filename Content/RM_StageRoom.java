@@ -1,4 +1,8 @@
-//Utilize singleton design pattern to create RM_StageRoom
+/**
+ * Class that holds the Stage Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_StageRoom extends Room{
 	
 	//Create a new instance of RM_StageRoom

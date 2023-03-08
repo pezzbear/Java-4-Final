@@ -1,4 +1,10 @@
-//Create class OBJ_RedNose which extends the Object class
+/**
+ * Class that holds the Nose object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Nose object allows the user to exit the game
+ * 
+ */
 public class OBJ_RedNose extends Object{
 
 	//@Override initObject() - add details about object
@@ -10,25 +16,22 @@ public class OBJ_RedNose extends Object{
 		canWalkThrough = false;
 	}
 	
-	//@Override Use()
+	
 	@Override
 	public String Use() {
-		//Get and set the flags
 		if (flag.GetFlag("hasRedNose")) {
-			flag.SetFlag("stageExitDoorIsLock", false);		
-			//return if door is unlocked
-			return "You look amazingly like a clown! Please find your way to the nearest exit.";
-		} else {			
-			//return if door is locked
-			return "You're not acting the part. You may not exit yet.";
-		}
-		
-	}
+				flag.SetFlag("stageExitDoorIsLock", false);
+				return "You look amazingly like a clown! Please find your way to the nearest exit.";
+			} else {
+				return "I don't have the nose.";
+			}
+		} 
 	
 	//@Override Pickup() to add the outfit to the objects
 	@Override
 	public String Pickup() { 
 		String outputString = "You picked up the " + title;
+		flag.SetFlag("hasRedNose", true);
 		flag.SetFlag("stageExitDoorIsLock", false);
 		inv.AddItem(this);
 		rController.currentRoom.objectsSouth[0] = null;

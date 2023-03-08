@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Outfit object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Outfit object allows the user to continue their mission on looking like a clown and eventually exit the game
+ * 
+ */
 public class OBJ_Outfit extends Object{
 
 	//@Override initObject() - add details about object

@@ -1,4 +1,8 @@
-//Utilize singleton design pattern to create RM_BalloonRoom
+/**
+ * Class that holds the Balloon Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_BalloonRoom extends Room{
 	
 	//Create new instance of RM_BalloonRoom

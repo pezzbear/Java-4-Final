@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the StageExitDoor object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The StageExitDoor object unlocks if the user collects all clown items and looks like a clown
+ * 
+ */
 public class OBJ_StageExitDoor extends Object{
 	
 	//@Override initObject() - add details about object

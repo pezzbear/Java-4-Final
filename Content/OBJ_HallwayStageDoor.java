@@ -1,4 +1,11 @@
-
+/**
+ * Class that holds the HallwayStageDoor object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The HallwayStageDoor object unlocks if the user is wearing makeup in front of the mirror
+ * It connects to the Stage room and the Hallway
+ * 
+ */
 public class OBJ_HallwayStageDoor extends Object{
 
 	//@Override initObject() - add details about object

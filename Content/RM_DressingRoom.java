@@ -1,4 +1,8 @@
-
+/**
+ * Class that holds the Dressing Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_DressingRoom extends Room{
 	
 	//Create a new instance of RM_DressingRoom

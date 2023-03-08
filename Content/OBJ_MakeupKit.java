@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Makeup object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Makeup object is needed to use in front of the mirror to unlock the HallwayStageDoor
+ * 
+ */
 public class OBJ_MakeupKit extends Object{
 	@Override
 	public void initObject() {

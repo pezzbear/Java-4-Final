@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the HallwayDressingDoor object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The HallwayDressingDoor object opens to the dressing room and hallway
+ * 
+ */
 public class OBJ_HallwayDressingDoor extends Object {
 
 	//@Override initObject() - add details about object

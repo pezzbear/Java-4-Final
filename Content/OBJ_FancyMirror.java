@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Mirror object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Mirror object unlocks the hallwayStageRoomDoor if the user is wearing the clown makeup
+ * 
+ */
 public class OBJ_FancyMirror extends Object {
 	
 	@Override

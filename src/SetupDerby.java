@@ -1,7 +1,10 @@
 import java.sql.*;
 
 import org.apache.derby.jdbc.EmbeddedDataSource;
-
+/**
+ * Class to setup the Derby database
+ * 
+ */
 public class SetupDerby {
 
 	public static void main(String[] args) throws Exception {

@@ -4,10 +4,15 @@ import java.io.InputStreamReader;
 import java.security.PublicKey;
 import java.sql.SQLException;
 import java.util.Locale;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+/**
+* The Game class initializes the Game for the final text game project.
+*
+* @author  Emily, Mitchell, Edan, Richard
+* @version 1.0
+* @since   2023-03-08 
+*/
 public class Game {
 
 	static Logger log = LogManager.getLogger(Game.class.getName());

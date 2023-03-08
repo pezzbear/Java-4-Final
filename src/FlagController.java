@@ -1,5 +1,8 @@
 import java.util.*;
-
+/**
+ * This class controls the flags for rooms and objects controlling which doors and objects are available to use
+ * 
+ */
 public class FlagController {
 	
 	private static final FlagController instance = new FlagController();

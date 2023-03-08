@@ -1,4 +1,7 @@
-
+/**
+ * Provides escape art once user escapes the game
+ * 
+ */
 public class Escaped {
 	// ASCII title for finishing the game
 	public void escapeTitle() {

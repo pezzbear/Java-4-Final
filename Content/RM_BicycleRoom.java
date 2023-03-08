@@ -1,4 +1,8 @@
-//Utilize singleton design pattern to create RM_BicycleRoom
+/**
+ * Class that holds the Bicycle Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_BicycleRoom extends Room{
 	
 	//Create a new instance of RM_BicycleRoom

@@ -1,4 +1,8 @@
-
+/**
+ * Class that holds the Storage Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_StorageRoom extends Room{
 	
 	//Create a new instance of RM_StorageRoom

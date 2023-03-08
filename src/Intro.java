@@ -6,7 +6,10 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-
+/**
+ * Shows an intro to the game and an introductory paragraph
+ * 
+ */
 public class Intro {
 	
 	//Chapter 4 #2 - Strings to hold welcome message to utilize Supplier functional interface
@@ -14,6 +17,7 @@ public class Intro {
 	
 	//ASCII title for some extra 80s look
 	public void showTitle() { 
+		System.out.println("Authors: Edan, Mitchell, Richard, Emily");
 		System.out.println("\r\n"
 				+ " ▄████▄   ██▓     ▒█████   █     █░███▄    █      ██████  █    ██  ██▓███  ▓█████  ██▀███  \r\n"
 				+ "▒██▀ ▀█  ▓██▒    ▒██▒  ██▒▓█░ █ ░█░██ ▀█   █    ▒██    ▒  ██  ▓██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒\r\n"

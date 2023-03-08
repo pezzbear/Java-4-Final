@@ -1,4 +1,8 @@
-
+/**
+ * Class that holds the Hallway Room  
+ * Holds all objects in this room
+ * 
+ */
 public class RM_Hallway extends Room{
 	
 	//Create a new instance of RM_Hallway

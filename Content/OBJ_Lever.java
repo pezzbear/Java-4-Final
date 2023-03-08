@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Lever object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Lever object unlocks the StageBicycleDoor if it is pulled
+ * 
+ */
 public class OBJ_Lever extends Object{
 	@Override
 	public void initObject() {

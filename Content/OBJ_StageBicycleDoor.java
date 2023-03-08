@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the StageBicycleDoor object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The StageBicycleDoor object unlocks the lever is pulled so that the user can get the nose
+ * 
+ */
 public class OBJ_StageBicycleDoor extends Object{
 	
 	//@Override initObject() - add details about object

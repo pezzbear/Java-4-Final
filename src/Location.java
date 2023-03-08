@@ -1,4 +1,7 @@
-//Enum used for the location in rooms
+/**
+ * Used to hold room locations
+ * 
+ */
 public enum Location {
 	north,
 	south,

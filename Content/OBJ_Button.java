@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Button object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Button object unlocks the crate to retrieve the clown outfit
+ * 
+ */
 public class OBJ_Button extends Object{
 	
 	@Override

@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Crate object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Crate object unlocks if the button is pushed so the user can get the outfit
+ * 
+ */
 public class OBJ_Crate extends Object{
 	
 	//@Override initObject() - add details about object

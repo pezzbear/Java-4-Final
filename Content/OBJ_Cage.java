@@ -1,4 +1,10 @@
-
+/**
+ * Class that holds the Cage object 
+ * Holds if it can be picked up and/or walked through
+ * Holds an @Override method for if object is used
+ * The Cage object allows a user to get the makeup if it is open
+ * 
+ */
 public class OBJ_Cage extends Object {
 	
 	@Override
@@ -15,7 +21,7 @@ public class OBJ_Cage extends Object {
 			return "I've already opened the cage. Inside there is a makeup kit.";
 		} else {
 			flag.SetFlag("cageIsOpen", true);
-			return "You open up the cage. Inside there is a makeup kit.";
+			return "You opened up the cage. Inside there is a makeup kit.";
 		}
 		
 	}
