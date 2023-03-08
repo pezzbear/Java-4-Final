@@ -4,7 +4,7 @@ public class OBJ_MakeupKit extends Object{
 	public void initObject() {
 		title = "Makeup";
 		description = "It's a clown makeup kit";
-		canPickup = false;
+		canPickup = true;
 		canWalkThrough = false;
 	}
 	
