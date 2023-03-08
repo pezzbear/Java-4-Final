@@ -1,3 +1,5 @@
+import java.util.*;
+import java.util.ArrayList;
 /*
  * 
  * Defines the TextController that is used to control the text that the player is inputting and the text that will be shown to the player in response.
@@ -60,7 +62,12 @@ public class TextController {
 		
 		switch(verb) {
 		case "use" :
-			for (Object object  : PlayerInventory.GetItemList()) {
+			List<Object> tempObjList = new ArrayList<Object>(); 
+			
+			tempObjList.addAll(PlayerInventory.GetItemList());
+			tempObjList.addAll(roomController.getCurrentObjects());
+			
+			for (Object object  : tempObjList) {
 				if (noun.equals(object.title.toLowerCase())) {
 					outputText = object.Use();
 					return outputText;
