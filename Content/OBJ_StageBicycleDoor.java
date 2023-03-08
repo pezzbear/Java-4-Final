@@ -20,7 +20,7 @@ public class OBJ_StageBicycleDoor extends Object{
 		String outputString = "";
 		
 		//Check if the door is locked or unlocked and send location and description of room
-		if(!flag.GetFlag("stageBicycleDoorIsLock")) {
+		if(!flag.GetFlag("stageBicyleDoorIsLock")) {
 			outputString = "You walk through the " + title;
 			if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {
 				rController.ChangeRoom(connectingRooms[1]);
