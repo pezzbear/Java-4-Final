@@ -60,7 +60,7 @@ public class TextController {
 		
 		switch(verb) {
 		case "use" :
-			for (Object object  : roomController.getCurrentObjects()) {
+			for (Object object  : PlayerInventory.GetItemList()) {
 				if (noun.equals(object.title.toLowerCase())) {
 					outputText = object.Use();
 					return outputText;

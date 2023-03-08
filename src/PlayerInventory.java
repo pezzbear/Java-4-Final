@@ -14,7 +14,7 @@ public class PlayerInventory {
 	}
 	
 	// List of all of the items in the players inventory
-	private List<Object> inventoryList = new ArrayList<Object>();
+	private static List<Object> inventoryList = new ArrayList<Object>();
 	
 	// Show the current inventory on the output console.
 	public String ShowInventory() { 
@@ -33,7 +33,7 @@ public class PlayerInventory {
 	}
 	
 	// Gets the item list
-	public List<Object> GetItemList() { 
+	public static List<Object> GetItemList() { 
 		return inventoryList;
 	}
 	
