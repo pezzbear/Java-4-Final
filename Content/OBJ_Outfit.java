@@ -13,7 +13,7 @@ public class OBJ_Outfit extends Object{
 	//@Override Use() to see if the user has unlocked the crate before getting the outfit
 	@Override
 	public String Use() {
-		if (flag.GetFlag("crateIsLock")) {
+		if (flag.GetFlag("buttonIsPushed")) {
 			if (!flag.GetFlag("crateIsLock")) {
 				flag.SetFlag("crateisLock", true);
 				return "You put the clown outfit on.";

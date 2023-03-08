@@ -15,17 +15,24 @@ public class OBJ_RedNose extends Object{
 	public String Use() {
 		//Get and set the flags
 		if (flag.GetFlag("hasRedNose")) {
-			//This SetFlag may be incorrect
-			//Emily
-			flag.SetFlag("stageExitDoorIsLock", false);
-			
+			flag.SetFlag("stageExitDoorIsLock", false);		
 			//return if door is unlocked
-			return "You danced just like a clown!";
-		} else {
-			
+			return "You look amazingly like a clown! Please find your way to the nearest exit.";
+		} else {			
 			//return if door is locked
 			return "You're not acting the part. You may not exit yet.";
 		}
 		
+	}
+	
+	//@Override Pickup() to add the outfit to the objects
+	@Override
+	public String Pickup() { 
+		String outputString = "You picked up the " + title;
+		flag.SetFlag("stageExitDoorIsLock", false);
+		inv.AddItem(this);
+		rController.currentRoom.objectsSouth[0] = null;
+		
+		return outputString;
 	}
 }

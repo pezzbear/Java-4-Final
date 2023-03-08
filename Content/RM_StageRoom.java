@@ -20,10 +20,7 @@ public class RM_StageRoom extends Room{
 	public void InitRoom() {
 		title = "Stage Room";
 		description = "A room with a stage and a door on each of the four walls.";
-		
-		//Can check these
-		//Emily
-		
+
 		//Add Balloon room door to the Stage room
 		objectsNorth = new Object[1];
 		objectsNorth[0] = new OBJ_StageBalloonDoor();
