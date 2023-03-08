@@ -18,7 +18,7 @@ public class Game {
 	//Get the LogManager
 	static Logger log = LogManager.getLogger(Game.class.getName());
 	
-	//Create a new instance of the Intro Class
+	//Create a new instance of the Intro Class: Brings to console starting credits and images.
 	private static Intro intro = new Intro();
 	
 	  /**
