@@ -10,7 +10,6 @@ public class TextController {
 	public PlayerInventory inventory = PlayerInventory.GetInstance();
 	
 	public void InputText(String inputString) {
-
 		String inputArr[] = inputString.split("\\s+");
 		
 		String verb = "";
@@ -49,9 +48,11 @@ public class TextController {
 		default: 
 			if(!noun.equals("")) {
 				System.out.println(DetermineAction(verb, noun, modifier));
+			} else {
+				System.out.println("Please enter a valid command. Type help for the list of commands.");
 			}
 			break;
-		}
+		} 
 	}
 	
 	private String DetermineAction(String verb, String noun, String modifier) {
@@ -176,7 +177,7 @@ public class TextController {
 			
 		}
 		return outputText;
-	}
+	} 
 
 	
 }

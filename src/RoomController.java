@@ -123,7 +123,7 @@ public class RoomController {
 		String outputString = "";
 		switch(location) {
 		case north :
-			if( currentRoom.objectsNorth != null) {
+			try {
 				outputString = "In the north side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsNorth.length; i++) {
 					Object object = currentRoom.objectsNorth[i];
@@ -133,12 +133,12 @@ public class RoomController {
 						outputString += object.title + ".";
 					}
 				}
-			} else {
+			} catch (Exception e) {
 				outputString = "You don't see anything in the north side of the room.";
 			}
 			break;
 		case south :
-			if( currentRoom.objectsSouth != null) {
+			try {
 				outputString = "In the south side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsSouth.length; i++) {
 					Object object = currentRoom.objectsSouth[i];
@@ -149,12 +149,12 @@ public class RoomController {
 						outputString += object.title + ".";
 					}
 				}
-			} else {
+			} catch (Exception e) {
 				outputString = "You don't see anything in the south side of the room.";
 			}
 			break;
 		case east :
-			if( currentRoom.objectsEast != null) {
+			try {
 				outputString = "In the east side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsEast.length; i++) {
 					Object object = currentRoom.objectsEast[i];
@@ -164,12 +164,12 @@ public class RoomController {
 						outputString += object.title + ".";
 					}
 				}
-			} else {
+			} catch (Exception e) {
 				outputString = "You don't see anything in the east side of the room.";
 			}
 			break;
 		case west :
-			if( currentRoom.objectsWest != null) {
+			try {
 				outputString = "In the west side of the room you see a ";
 				for(int i = 0; i < currentRoom.objectsWest.length; i++) {
 					Object object = currentRoom.objectsWest[i];
@@ -179,7 +179,7 @@ public class RoomController {
 						outputString += object.title + ".";
 					}
 				}
-			} else {
+			} catch (Exception e) {
 				outputString = "You don't see anything in the west side of the room.";
 			}
 			break;
