@@ -5,6 +5,7 @@
 	<classpathentry kind="src" path="Content"/>
 	<classpathentry kind="src" path="dirbyJars"/>
 	<classpathentry kind="src" path="db-derby-10.15.2.0-lib"/>
+	<classpathentry kind="src" path="resource"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>

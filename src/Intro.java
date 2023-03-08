@@ -1,6 +1,9 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -57,15 +60,23 @@ public class Intro {
 	}
 	
 	//Chapter 4 #2 - Implement method for supplier functional interface example
-	public void supplierExample() {
+	public void supplierExample(Locale local) {
+		ResourceBundle rb = ResourceBundle.getBundle("Final", local);
 		//Chapter 4 #2 - Supplier Function to return the greeting message
-		Supplier<String> greeting = () -> welcomeMessage;
+		Supplier<String> greeting = () -> rb.getString("message");
 		
 		//Chapter 4 #2 - Supplier Function to return the date now
-		Supplier<LocalDate> dateToday = LocalDate::now;
+		Supplier<LocalDateTime> dateToday = LocalDateTime::now;
 		
 		//Set date to date now
-		LocalDate date = dateToday.get();
+		LocalDateTime date = dateToday.get();
+		
+		Locale ir = new Locale("ga", "IE");
+		
+		if(local.equals(ir))
+		{
+			date = date.minusHours(-6);
+		}
 		
 		//Print the greeting message
 		System.out.println(greeting.get());

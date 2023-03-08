@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.PublicKey;
 import java.sql.SQLException;
+import java.util.Locale;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,10 +26,21 @@ public class Game {
 		}
 		*/
 		
+		Locale english = new Locale("en", "EN");
+		Locale irish = new Locale("ga", "IE");
+		
 		intro.showTitle();
 		
 		//Show the supplier example
-		intro.supplierExample();
+		intro.supplierExample(english);
+		
+		intro.supplierExample(irish);
+		
+		int age = 18;
+        assert age < 18 : "Cannot play";
+		
+		System.out.println("The user's age is at least: " + age);
+        System.out.println();
 		
 		intro.introParagraph();
 		
