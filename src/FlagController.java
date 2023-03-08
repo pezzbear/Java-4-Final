@@ -38,6 +38,8 @@ public class FlagController {
 	
 	private synchronized void BalloonRoomFlags() {
 		flags.put("crateIsLock", true);
+		flags.put("buttonIsPushed", true);
+		flags.put("leverIsPulled", true);
 	}
 	
 	private synchronized void BicylceRoomFlags() {
@@ -50,6 +52,7 @@ public class FlagController {
 	
 	private synchronized void StageRoomFlags() {
 		flags.put("stageExitDoorIsLock", true);
+		flags.put("stageBicyleDoorIsLock", true);
 		flags.put("gameIsWon", false);
 	}
 	

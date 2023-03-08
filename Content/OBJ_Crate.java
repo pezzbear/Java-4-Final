@@ -13,13 +13,12 @@ public class OBJ_Crate extends Object{
 	//@Overide Use()
 	@Override
 	public String Use() {
-		
-		//Check if the crate is locked
-		if (flag.GetFlag("crateIsLock")) {
-			return "I've already opened the crate. Inside there is an outfit.";
+		if (flag.GetFlag("buttonIsPushed")) {
+			flag.SetFlag("crateIsLock", false);
+			return "You unlocked the crate! Take the clown outfit.";
 		} else {
-			flag.SetFlag("crateIsLock", true);
-			return "Figure out how to open the crate. Inside there is an outfit.";
+			return "You need to push the button. Go find it!";
 		}
+		
 	}
 }

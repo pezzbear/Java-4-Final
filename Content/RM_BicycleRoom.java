@@ -21,9 +21,6 @@ public class RM_BicycleRoom extends Room{
 		title = "Bicylce Room";
 		description = "A room filled with tiny clown bikes, a door, and a red clown nose on a pedestal.";
 		
-		//Check these over
-		//Emily
-		
 		//Add red nose to the room
 		objectsSouth = new Object[1];
 		objectsSouth[0] = new OBJ_RedNose();

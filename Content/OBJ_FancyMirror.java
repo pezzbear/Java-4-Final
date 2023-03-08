@@ -15,7 +15,8 @@ public class OBJ_FancyMirror extends Object {
 			flag.SetFlag("hallwayStageDoorIsLock", false);
 			return "The Mirror seems to recognize you. You hear a clicking sound";
 		} else {
-			return "You see your reflection in the Mirror. Maybe I have to change my appearance.";
+			return "You see your reflection in the Mirror. "
+					+ "Maybe I have to change my appearance by using an item. Type use + (item name)";
 		}
 		
 	}
