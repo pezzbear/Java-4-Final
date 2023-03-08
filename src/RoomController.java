@@ -78,50 +78,83 @@ public class RoomController {
 		}
 	}
 	
-	// Moves the player to the desired location of the room
-	
+
+	  /**
+	   * Moves the player to location of room
+	   * Based on direction they picked
+	   */	
 	public synchronized String move(Location location) { 
 		String outputString = "";
 		switch(location) {
+		
+		//User moves north
 		case north :
+			
+			//If they're already north, output message
 			if (currentLocation == location) {
 				outputString = "I'm already in the north side of the room.";
+				
+			//else move north
 			} else {
 				outputString = "You move to the north side of the room.";
 			}
 			break;
+		
+		//User moves south
 		case south :
+			
+			//If they're already south, output message
 			if (currentLocation == location) {
 				outputString = "I'm already in the south side of the room.";
+				
+			//else move south	
 			} else {
 				outputString = "You move to the south side of the room.";
 			}
 			break;
+			
+		//User moves east	
 		case east :
+			
+			//If they're already east, output message
 			if (currentLocation == location) {
 				outputString = "I'm already in the east side of the room.";
+				
+			//Else move east	
 			} else {
 				outputString = "You move to the east side of the room.";
 			}
 			break;
+			
+		//User moves west	
 		case west :
+			
+			//If they're already there, output message
 			if (currentLocation == location) {
 				outputString = "I'm already in the west side of the room.";
+				
+			//Else move west	
 			} else {
 				outputString = "You move to the west side of the room.";
 			}
 			break;
 		}
+		
+		//Update user current location and output message
 		currentLocation = location;
 		UpdateCurrentObjects();
 		return outputString;
 	}
 	
-	// Returns the objects that are in each location of the room
-	
+	  /**
+	   * Returns where each object is in the room and holds their location
+	   * Chapter 6 #1 - Uses try-catch
+	   */
 	public synchronized String look(Location location) { 
 		String outputString = "";
 		switch(location) {
+		
+		//Return objects in the north side of the room
 		case north :
 			try {
 				outputString = "In the north side of the room you see a ";
@@ -137,6 +170,8 @@ public class RoomController {
 				outputString = "You don't see anything in the north side of the room.";
 			}
 			break;
+			
+		//Return objects in the south side of the room	
 		case south :
 			try {
 				outputString = "In the south side of the room you see a ";
@@ -153,6 +188,8 @@ public class RoomController {
 				outputString = "You don't see anything in the south side of the room.";
 			}
 			break;
+			
+		//Return objects in the east side of the room		
 		case east :
 			try {
 				outputString = "In the east side of the room you see a ";
@@ -168,6 +205,8 @@ public class RoomController {
 				outputString = "You don't see anything in the east side of the room.";
 			}
 			break;
+			
+		//Return objects in the west side of the room	
 		case west :
 			try {
 				outputString = "In the west side of the room you see a ";
@@ -188,22 +227,30 @@ public class RoomController {
 	}
 	
 	// Returns the objects the player can interact with in the current location of the current room they are in. 
-	
 	public synchronized List<Object> getCurrentObjects() { 
 		return currentObjects;
 	}
 	
-	
+	  /**
+	   * Moves the player to change rooms
+	   * gets items in new room
+	   */	
 	public synchronized void ChangeRoom(String key) {
 		currentRoom = GetRoom(key);
 		UpdateCurrentObjects();
 	}
 	
-	
+	  /**
+	   * Gets the room the user is in
+	   */	
 	public synchronized Room GetRoom(String key) {
 		return rooms.get(key);
 	}
 
+	  /**
+	   *Sets the new user location
+	   *based on the direction they chose
+	   */	
 	public synchronized void SetLocation() {
 		switch(currentLocation) {
 		case north :

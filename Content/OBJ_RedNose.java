@@ -23,13 +23,14 @@ public class OBJ_RedNose extends Object{
 				flag.SetFlag("stageExitDoorIsLock", false);
 				return "You look amazingly like a clown! Please find your way to the nearest exit.";
 			} else {
-				return "I don't have the nose.";
+				return "Are you sure you picked up the nose?";
 			}
 		} 
 	
 	//@Override Pickup() to add the outfit to the objects
 	@Override
 	public String Pickup() { 
+		if (flag.GetFlag("hasOutfit")) {
 		String outputString = "You picked up the " + title;
 		flag.SetFlag("hasRedNose", true);
 		flag.SetFlag("stageExitDoorIsLock", false);
@@ -37,5 +38,10 @@ public class OBJ_RedNose extends Object{
 		rController.currentRoom.objectsSouth[0] = null;
 		
 		return outputString;
+	}else {
+		flag.SetFlag("hasRedNose", false);
+		flag.SetFlag("stageExitDoorIsLock", true);
+		return "You don't look enough like a clown. Did you put on your outfit yet?";
 	}
+  }
 }

@@ -36,27 +36,41 @@ public abstract class Object {
 	// Initializes the object. Sets the Title, Adjectives, and the text for each verb that needs to be used.
 	public abstract void initObject(); 
 	
-	
-	// All of the methods below are default "Verb" methods. They are called when a verb modifying a certain Object.
-	
+
+	  /**
+	   * Default verb method for Look
+	   * Returns a description
+	   */	
 	public String Look() {
 		String outputString = description;
 		
 		return outputString;
 	}
 	
-	public String Pickup() { // You'll have to Override this functions in order to add flag checks! 
+	  /**
+	   * Default verb method for Pickup
+	   * Returns a description
+	   */
+	public String Pickup() { 
 		String outputString = "You picked up the " + title;
 		
 		return outputString;
 	}
 	
-	public String Use() { // You'll have to Override this functions in order to add flag checks! 
+	  /**
+	   * Default verb method for User
+	   * Returns a description
+	   */
+	public String Use() { 
 		String outputString = "You used the" + title;
 
 		return outputString;
 	}
 	
+	  /**
+	   * Default verb method for WalkThrough
+	   * Returns the current room the user is in
+	   */
 	public String WalkThrough() {
 		String outputString = "You walk through the " + title;
 		if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {

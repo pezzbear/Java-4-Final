@@ -15,7 +15,10 @@ public class Intro {
 	//Chapter 4 #2 - Strings to hold welcome message to utilize Supplier functional interface
 	private static String welcomeMessage = "Welcome to Clown Super Fun House Adventures! Your date of game access is: ";
 	
-	//ASCII title for some extra 80s look
+	  /**
+	   * Method to show artsy intro message
+	   * Shows game creators	   
+	   **/
 	public void showTitle() { 
 		System.out.println("Authors: Edan, Mitchell, Richard, Emily");
 		System.out.println("\r\n"
@@ -52,9 +55,13 @@ public class Intro {
 + "");
 		
 	}
-			
+	
+	  /**
+	   * Creates an inro paragraph
+	   */
 	public void introParagraph() {
 
+		//Print statements to show game theme and object of the game
 		System.out.println("You are trapped and the only way out is "
 				+ "to trick the House into thinking you too are a clown.");
 		System.out.println("Collect the clown items to attempt your trickery -- "
@@ -62,10 +69,17 @@ public class Intro {
 		
 		System.out.println();
 	}
-	
-	//Chapter 4 #2 - Implement method for supplier functional interface example
+
+	  /**
+	   * Chapter 4 #2 - Implement method for supplier functional interface example
+	   * Shows date and date calculations
+	   * Shows string localization
+	   * Prints a game greeting
+	   */
 	public void supplierExample(Locale local) {
+		
 		ResourceBundle rb = ResourceBundle.getBundle("Final", local);
+		
 		//Chapter 4 #2 - Supplier Function to return the greeting message
 		Supplier<String> greeting = () -> rb.getString("message");
 		
@@ -75,8 +89,10 @@ public class Intro {
 		//Set date to date now
 		LocalDateTime date = dateToday.get();
 		
+		//String localization
 		Locale ir = new Locale("ga", "IE");
 		
+		//Chapter 5 #4 - date calculation
 		if(local.equals(ir))
 		{
 			date = date.minusHours(-6);
@@ -90,8 +106,12 @@ public class Intro {
 		System.out.println();
 	}
 	
-	
-	//Chapter 4 #2 - Implement method for consumer functional interface example
+	  /**
+	   * Chapter 4 #2 - Implement method for consumer functional interface example
+	   * Shows list of items to find to become a clown and exit game
+	   * Prints items and beginning game statements
+	   */	
+
 	public void consumerExample() {
 		
 		//Consumer to display item list

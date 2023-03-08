@@ -3,7 +3,12 @@
  * 
  */
 public class Escaped {
-	// ASCII title for finishing the game
+	
+	  /**
+	   * Creates art once user escapes
+	   * Includes println() messages
+	   * 
+	   */
 	public void escapeTitle() {
 		System.out
 				.println("\r\n" 

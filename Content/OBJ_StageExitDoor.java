@@ -27,13 +27,14 @@ public class OBJ_StageExitDoor extends Object{
 		
 		//Check if the door is locked or unlocked and send location and description of room
 		if(!flag.GetFlag("stageExitDoorIsLock")) {
+
 			if (rController.GetRoom(connectingRooms[0]) == rController.currentRoom) {
 				rController.ChangeRoom(connectingRooms[1]);
 			} else {
 				rController.ChangeRoom(connectingRooms[0]);
-			}
+			}			
 			rController.SetLocation();
-			
+
 			Escaped escaped = new Escaped();
 			
 			flag.SetFlag("gameIsWon", true);
@@ -41,7 +42,7 @@ public class OBJ_StageExitDoor extends Object{
 			escaped.escapeTitle();
 	
 		} else {
-			outputString = "The Door seems to be locked";
+			outputString = "The Door seems to be locked! Do you have the outfit and the nose?";
 		}
 		
 		return outputString;

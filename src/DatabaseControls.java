@@ -5,7 +5,11 @@ import java.sql.*;
  */
 public class DatabaseControls {
 	
-	
+	  /**
+	   * Creates GetItem() that throws an exception
+	   * used in the derby database
+	   * 
+	   */
 	public void GetItem() throws SQLException{
 		String urlString = "jdbc:derby:gameDatabase";
 		try(

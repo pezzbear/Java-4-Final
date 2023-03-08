@@ -22,6 +22,7 @@ public class OBJ_Outfit extends Object{
 		if (flag.GetFlag("buttonIsPushed")) {
 			if (!flag.GetFlag("crateIsLock")) {
 				flag.SetFlag("crateisLock", true);
+				flag.SetFlag("hasOutfit", true);
 				return "You put the clown outfit on.";
 			} else {
 				return "I already have the outfit on.";

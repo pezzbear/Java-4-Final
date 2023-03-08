@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * Class to hold player inventory of items collected
- * 
+ * Returns list of items
  */
 public class PlayerInventory {
 	
+	//Create instance of PlayerInventory
 	private static final PlayerInventory instance = new PlayerInventory();
 	
 	private PlayerInventory() {
